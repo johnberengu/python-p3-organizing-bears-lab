@@ -4,14 +4,18 @@ select_all_female_bears_return_name_and_age = """
         bears.age
     FROM bears
     WHERE bears.sex = 'F';
+
 """
+
 
 select_all_bears_names_and_orders_in_alphabetical_order = """
     SELECT
         bears.name
     FROM bears
     order by name ASC
+
 """
+
 
 select_all_bears_names_and_ages_that_are_alive_and_order_youngest_to_oldest = """
     SELECT
@@ -20,7 +24,9 @@ select_all_bears_names_and_ages_that_are_alive_and_order_youngest_to_oldest = ""
     FROM bears
     WHERE bears.alive = 1
     ORDER BY bears.age ASC;
+
 """
+
 
 select_oldest_bear_and_returns_name_and_age = """
     SELECT 
@@ -29,6 +35,7 @@ select_oldest_bear_and_returns_name_and_age = """
     FROM bears
     WHERE age = (SELECT MAX(age) FROM bears) 
     AND name IS NOT NULL;
+
 """
 select_youngest_bear_and_returns_name_and_age = """
     SELECT
@@ -39,4 +46,5 @@ select_youngest_bear_and_returns_name_and_age = """
         SELECT MIN(age)
         FROM bears
     );
+    
 """
